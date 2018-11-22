@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="main.js"></script>
+    <script src="player.js"></script>
+    <script src="room.js"></script>
+    <script src="client.js"></script>
+    <script src="message.js"></script>
+    <script src="libs/p5.collide2d.js"></script>
+    <script src="libs/p5.play.js"></script>
+
+</head>
+
+<body>
+    <div id="sketch-holder" class="sketch"></div>
+    <div class="menu">
+        <input class="chatbox" type="text" placeholder="Speak here!" maxlength="75" onkeydown="getMessage(this)">
+    </div>
+    <script>
+        $(window).on('load', function () {
+            $('.overlay').show();
+        });
+    </script>
+    <div class="overlay">
+        <div class="modal">
+            <button onclick="$('.overlay').hide()">Open modal</button>
+        </div>
+    </div>
+</body>
+
+</html>
