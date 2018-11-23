@@ -146,10 +146,12 @@ table {
     width: 50%;
     border: 2px solid #aaa;
     border-radius: 4px;
-    margin: 1% 25%;
     outline: none;
     padding: 8px;
     box-sizing: border-box;
+    float: left;
+    margin-top: 1%;
+    margin-left: 15%;
 }
 
 .menu {
@@ -162,28 +164,48 @@ table {
     margin-right: auto;
 }
 
-.overlay {
-    position: fixed;
-    /* Positioning and size */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(128, 128, 128, 0.5);
-    /* color */
-    display: none;
-    /* making it hidden by default */
+.emojiglasses {
+    background: url(../img/emoji-oculos.png);
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 1%;
+    margin-left: 5%;
+    outline: none;
 }
 
-.modal {
-    position: absolute;
-    /* positioning in center of page */
-    top: 538px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 490px;
-    /* size */
-    width: 600px;
-    background-color: white;
-    /* background color */
+.emojismile {
+    background: url(../img/emoji-smile.png);
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 1%;
+    outline: none;
+}
+
+.emojisad {
+    background: url(../img/emoji-sad.png);
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 1%;
+    outline: none;
+}
+
+.emojiangry {
+    background: url(../img/emoji-angry.png);
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 1%;
+    outline: none;
+}
+
+.emojisurprised {
+    background: url(../img/emoji-surprised.png);
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 1%;
+    outline: none;
 }

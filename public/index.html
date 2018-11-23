@@ -16,20 +16,16 @@
 
 </head>
 
-<body>
+<body onload="startMenu()">
     <div id="sketch-holder" class="sketch"></div>
+
     <div class="menu">
         <input class="chatbox" type="text" placeholder="Speak here!" maxlength="75" onkeydown="getMessage(this)">
-    </div>
-    <script>
-        $(window).on('load', function () {
-            $('.overlay').show();
-        });
-    </script>
-    <div class="overlay">
-        <div class="modal">
-            <button onclick="$('.overlay').hide()">Open modal</button>
-        </div>
+        <button class="emojiglasses"></button>
+        <button class="emojismile"></button>
+        <button class="emojisad"></button>
+        <button class="emojiangry"></button>
+        <button class="emojisurprised"></button>
     </div>
 </body>
 

@@ -20,7 +20,6 @@ class Player {
 
     update() {
         if (this.updateCheck) {
-            //move with interpolation and animate
             this.player.velocity.x = (this.destinationX - this.player.position.x) / 2;
             this.player.velocity.y = (this.destinationY - this.player.position.y) / 2;
             if (this.player.getSpeed() === 0) this.updateCheck = false;

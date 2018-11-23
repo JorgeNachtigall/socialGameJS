@@ -43,6 +43,10 @@ io.on('connection',
                 socket.broadcast.emit('message', message);
             });
 
+        socket.on('disconnect', function () {
+            io.emit('remove', socket.id);
+        });
+
     });
 
 function generateId() {

@@ -54,6 +54,10 @@ Client.socket.on('allPlayers', function (data) {
     });
 });
 
+Client.socket.on('remove', function (data) {
+    delete room.players[data];
+});
+
 Client.socket.on('newPlayer', function (data) {
     room.players[data.idOnline] = new Player(true, data.x, data.y, 'Niko');
 });
