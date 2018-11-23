@@ -1,13 +1,9 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);;
-var io = require('socket.io')(http);
-
-app.set('port', (process.env.PORT || 5000));
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-});
-
+var server = app.listen(process.env.PORT || 5000);
+var socket = require('socket.io');
+var io = socket(server);
+app.use(express.static('public'));
 
 var connectedPlayers = {};
 
@@ -62,10 +58,6 @@ io.on('connection',
         });
 
     });
-
-http.listen(app.get('port'), function () {
-    console.log('Listening on: ' + app.get('port'));
-});
 
 function generateId() {
     return '_' + Math.random().toString(36).substr(2, 9);
