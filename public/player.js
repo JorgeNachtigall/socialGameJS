@@ -8,6 +8,7 @@ class Player {
         this.visible = visible;
         this.updateCheck = false;
         this.id = generateId();
+        this.emote;
 
         this.player.maxSpeed = 2;
     }
@@ -16,12 +17,15 @@ class Player {
         if (this.visible) {
             drawSprite(this.player);
         }
+        if (this.emote) {
+            image(this.emote, this.destinationX, this.destinationY - 40);
+        }
     }
 
     update() {
         if (this.updateCheck) {
-            this.player.velocity.x = (this.destinationX - this.player.position.x) / 2;
-            this.player.velocity.y = (this.destinationY - this.player.position.y) / 2;
+            this.player.velocity.x = (this.destinationX - this.player.position.x);
+            this.player.velocity.y = (this.destinationY - this.player.position.y);
             if (this.player.getSpeed() === 0) this.updateCheck = false;
         }
     }

@@ -21,11 +21,12 @@
 
     <div class="menu">
         <input class="chatbox" type="text" placeholder="Speak here!" maxlength="75" onkeydown="getMessage(this)">
-        <button class="emojiglasses"></button>
-        <button class="emojismile"></button>
-        <button class="emojisad"></button>
-        <button class="emojiangry"></button>
-        <button class="emojisurprised"></button>
+        <button class="emojismile" onclick="getEmote('smile')"></button>
+        <button class="emojisad" onclick="getEmote('sad')"></button>
+        <button class="emojisurprised" onclick="getEmote('surprised')"></button>
+        <button class="emojiglasses" onclick="getEmote('glasses')"></button>
+        <button class="emojiangry" onclick="getEmote('angry')"></button>
+        <button class="emojidevil" onclick="getEmote('devil')"></button>
     </div>
 </body>
 

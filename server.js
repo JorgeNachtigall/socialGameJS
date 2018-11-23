@@ -43,7 +43,17 @@ io.on('connection',
                 socket.broadcast.emit('message', message);
             });
 
+        socket.on('emote',
+            function (data) {
+                message = {
+                    emote: data.emote,
+                    id: socket.id
+                }
+                socket.broadcast.emit('emote', message);
+            });
+
         socket.on('disconnect', function () {
+            delete connectedPlayers[socket.id];
             io.emit('remove', socket.id);
         });
 

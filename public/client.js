@@ -25,6 +25,19 @@ Client.sendMessage = function (playerName, msg) {
     });
 }
 
+Client.sendEmote = function (emoteName) {
+    Client.socket.emit('emote', {
+        emote: emoteName
+    });
+}
+
+Client.socket.on('emote', function (data) {
+    room.players[data.id].emote = chooseEmote(data.emote);
+    setTimeout(function () {
+        room.players[data.id].emote = false;
+    }, 500);
+});
+
 Client.socket.on('message', function (data) {
     Object.keys(room.messages).forEach(function (index) {
         room.messages[index].updateCheck = true;

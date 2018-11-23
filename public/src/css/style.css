@@ -165,12 +165,11 @@ table {
 }
 
 .emojiglasses {
-    background: url(../img/emoji-oculos.png);
+    background: url(../img/emoji-glasses.png);
     width: 32px;
     height: 32px;
     border: none;
     margin-top: 1%;
-    margin-left: 5%;
     outline: none;
 }
 
@@ -180,6 +179,7 @@ table {
     height: 32px;
     border: none;
     margin-top: 1%;
+    margin-left: 5%;
     outline: none;
 }
 
@@ -203,6 +203,15 @@ table {
 
 .emojisurprised {
     background: url(../img/emoji-surprised.png);
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 1%;
+    outline: none;
+}
+
+.emojidevil {
+    background: url(../img/emoji-devil.png);
     width: 32px;
     height: 32px;
     border: none;

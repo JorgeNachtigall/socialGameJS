@@ -7,6 +7,16 @@ let floor = [];
 let msg;
 let name;
 let input;
+let emojiSmile, emojiSad, emojiGlasses, emojiAngry, emojiSurprised;
+
+function preload() {
+    emojiSmile = loadImage('src/img/emoji-smile.png');
+    emojiSad = loadImage('src/img/emoji-sad.png');
+    emojiGlasses = loadImage('src/img/emoji-glasses.png');
+    emojiAngry = loadImage('src/img/emoji-angry.png');
+    emojiSurprised = loadImage('src/img/emoji-surprised.png');
+    emojiDevil = loadImage('src/img/emoji-devil.png')
+}
 
 function setup() {
     W = 480;
@@ -54,7 +64,7 @@ function staticRender() {
 }
 
 function mousePressed() {
-    if (name) {
+    if (player.playerName) {
         if (collidePointPoly(mouseX, mouseY, floor)) {
             Client.sendClick(player.id, mouseX, mouseY - 16);
             player.destinationX = mouseX;
@@ -91,5 +101,30 @@ function startMenu() {
         name = false;
     } else {
         name = person;
+    }
+}
+
+function getEmote(emote) {
+    player.emote = chooseEmote(emote);
+    Client.sendEmote(emote);
+    setTimeout(function () {
+        player.emote = false;
+    }, 500);
+}
+
+function chooseEmote(emote) {
+    switch (emote) {
+        case "smile":
+            return emojiSmile;
+        case "sad":
+            return emojiSad;
+        case "surprised":
+            return emojiSurprised;
+        case "glasses":
+            return emojiGlasses;
+        case "angry":
+            return emojiAngry;
+        case "devil":
+            return emojiDevil;
     }
 }
