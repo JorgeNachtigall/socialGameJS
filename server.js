@@ -1,17 +1,15 @@
 var express = require('express');
 var app = express();
-var server = require('http').createServer(app);
-//var socket = require('socket.io');
-var io = require('socket.io').listen(server);
+var server = app.listen(3000);
+var socket = require('socket.io');
+var io = socket(server);
 app.use(express.static('public'));
-
-server.listen(process.env.PORT || 5000);
 
 var connectedPlayers = {};
 
 console.log("Server is running!");
 
-io.sockets.on('connection',
+io.on('connection',
 
     function (socket) {
 
@@ -25,7 +23,7 @@ io.sockets.on('connection',
                     y: data.h
                 };
                 socket.emit('allPlayers', connectedPlayers);
-                socket.broadcast.emit('newPlayer', connectedPlayers[serverId]);
+                socket.broadcast.emit('newPlayer', connectedPlayers[socket.id]);
             });
 
         socket.on('move',
