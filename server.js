@@ -1,9 +1,12 @@
 var express = require('express');
 var app = express();
-var server = app.listen(3000);
 var socket = require('socket.io');
 var io = socket(server);
 app.use(express.static('public'));
+var port = process.env.PORT || 5000;
+app.listen(port, function () {
+    console.log("Server is running. Listening on PORT: " + port);
+});
 
 var connectedPlayers = {};
 
